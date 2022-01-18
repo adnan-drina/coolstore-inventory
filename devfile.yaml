@@ -32,7 +32,7 @@ components:
     memoryLimit: 4Gi
     type: dockerimage
     alias: quarkus-tools
-    image: 'image-registry.openshift-image-registry.svc:5000/openshift/quarkus-stack:2.13'
+    image: 'registry.redhat.io/codeready-workspaces/plugin-java11-rhel8@sha256:eba0875477a9a116cf0e2697048cb586c9b32e90cf21ff4b3dfd70fab77c5fd0'
     env:
       - value: /home/jboss/.m2
         name: MAVEN_CONFIG
@@ -47,7 +47,7 @@ commands:
     actions:
       - workdir: '${CHE_PROJECTS_ROOT}'
         type: exec
-        command: 'oc login https://$KUBERNETES_SERVICE_HOST:$KUBERNETES_SERVICE_PORT --insecure-skip-tls-verify=true --username=opentlc-mgr && oc project inventory-dev'
+        command: 'oc login https://$KUBERNETES_SERVICE_HOST:$KUBERNETES_SERVICE_PORT --insecure-skip-tls-verify=true --username=opentlc-mgr && oc project coolstore-inventory-dev'
         component: quarkus-tools
   - name: Deploy to DEV
     actions:
