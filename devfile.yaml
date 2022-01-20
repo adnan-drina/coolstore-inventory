@@ -43,11 +43,17 @@ components:
     reference: 'https://raw.githubusercontent.com/redhat-cop/agnosticd/development/ansible/roles/ocp4-workload-ccnrd-cuttingedge/files/cheplugin-meta.yaml'
     alias: mta-ide-plugin
 commands:
-  - name: Login to OpenShift
+  - name: Login to OpenShift (Terminal)
     actions:
       - workdir: '${CHE_PROJECTS_ROOT}'
         type: exec
         command: 'oc login https://$KUBERNETES_SERVICE_HOST:$KUBERNETES_SERVICE_PORT --insecure-skip-tls-verify=true --username=opentlc-mgr && oc project coolstore-inventory-dev'
+        component: quarkus-tools
+  - name: Login to OpenShift (Web)
+    actions:
+      - workdir: '${CHE_PROJECTS_ROOT}'
+        type: exec
+        command: 'oc whoami --show-console'
         component: quarkus-tools
   - name: Deploy to DEV
     actions:
