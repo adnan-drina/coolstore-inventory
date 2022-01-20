@@ -53,13 +53,13 @@ commands:
     actions:
       - workdir: '${CHE_PROJECTS_ROOT}'
         type: exec
-        command: 'mvn clean package -DskipTests -f ${CHE_PROJECTS_ROOT}/coolstore-inventory'
+        command: 'oc start-build inventory --from-dir $CHE_PROJECTS_ROOT/coolstore-inventory --follow'
         component: quarkus-tools
   - name: Run Tests
     actions:
       - workdir: '${CHE_PROJECTS_ROOT}'
         type: exec
-        command: 'mvn verify -f ${CHE_PROJECTS_ROOT}/coolstore-inventory'
+        command: 'mvn verify -f ${CHE_PROJECTS_ROOT}/coolstore-inventory -Dquarkus.kubernetes.deploy=false'
         component: quarkus-tools
   - name: Start Live Coding
     actions:
@@ -71,13 +71,13 @@ commands:
     actions:
       - workdir: '${CHE_PROJECTS_ROOT}'
         type: exec
-        command: 'mvn package -DuberJar=true -DskipTests -f ${CHE_PROJECTS_ROOT}/coolstore-inventory'
+        command: 'mvn package -DuberJar=true -DskipTests -f ${CHE_PROJECTS_ROOT}/coolstore-inventory -Dquarkus.kubernetes.deploy=false'
         component: quarkus-tools
   - name: Package App (Native)
     actions:
       - workdir: '${CHE_PROJECTS_ROOT}'
         type: exec
-        command: 'mvn package -Pnative -DskipTests -Dquarkus.package.uber-jar=false -f ${CHE_PROJECTS_ROOT}/coolstore-inventory'
+        command: 'mvn package -Pnative -DskipTests -Dquarkus.package.uber-jar=false -f ${CHE_PROJECTS_ROOT}/coolstore-inventory -Dquarkus.kubernetes.deploy=false'
         component: quarkus-tools
   - name: Start Debugger on 5005
     actions:

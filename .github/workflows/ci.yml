@@ -18,4 +18,4 @@ jobs:
         with:
           java-version: 11
       - name: Build
-        run: ./mvnw compile -B
+        run: ./mvnw verify -B -Dquarkus.kubernetes.deploy=false
