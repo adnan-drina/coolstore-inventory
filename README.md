@@ -112,4 +112,4 @@ Have fun, and join the team of contributors!
 
 ## Developer Workspace
 
-[![Contribute](https://raw.githubusercontent.com/blues-man/cloud-native-workshop/demo/factory-contribute.svg)](https://codeready-openshift-workspaces.apps.cluster-wp8mr.wp8mr.sandbox668.opentlc.com/factory?url=https://github.com/adnan-drina/coolstore-inventory&policies.create=peruser)
+[![Contribute](https://raw.githubusercontent.com/blues-man/cloud-native-workshop/demo/factory-contribute.svg)](https://codeready-codeready-workspaces.apps.cluster-wp8mr.wp8mr.sandbox668.opentlc.com/factory?url=https://github.com/adnan-drina/coolstore-inventory&policies.create=peruser)
