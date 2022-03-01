@@ -1,8 +1,8 @@
 apiVersion: 1.0.0
 metadata:
   generateName: coolstore-inventory-
-attributes:
-  persistVolumes: 'false'
+#attributes:
+#  persistVolumes: 'false'
 projects:
   - name: coolstore-inventory
     source:
@@ -33,6 +33,9 @@ components:
     type: dockerimage
     alias: quarkus-tools
     image: 'quay.io/adrina/crw-stack-quarkus:3.1'
+    volumes:
+    - name: m2
+      containerPath: /home/jboss/.m2
     env:
       - value: /home/jboss/.m2
         name: MAVEN_CONFIG
