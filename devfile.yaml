@@ -41,10 +41,10 @@ components:
         name: MAVEN_CONFIG
       - value: '-Xmx4G -Xss128M -XX:MetaspaceSize=1G -XX:MaxMetaspaceSize=2G -XX:+CMSClassUnloadingEnabled'
         name: MAVEN_OPTS
-  - memoryLimit: 1500M
-    type: chePlugin
-    reference: 'https://raw.githubusercontent.com/redhat-cop/agnosticd/development/ansible/roles/ocp4-workload-ccnrd-cuttingedge/files/cheplugin-meta.yaml'
-    alias: mta-ide-plugin
+#  - memoryLimit: 1500M
+#    type: chePlugin
+#    reference: 'https://raw.githubusercontent.com/redhat-cop/agnosticd/development/ansible/roles/ocp4-workload-ccnrd-cuttingedge/files/cheplugin-meta.yaml'
+#    alias: mta-ide-plugin
 commands:
   - name: Login to OpenShift (Terminal)
     actions:
