@@ -108,7 +108,7 @@ Navigate to:
 
 <http://localhost:8080/index.html>
 
-Have fun, and join the team of contributors!
+Have fun, and join the team of contributors! 
 
 ## Developer Workspace
 
